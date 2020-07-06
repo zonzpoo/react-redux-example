@@ -39,7 +39,8 @@ import { addArticle } from "../store/action";
 // };
 
 const Articles = ({ articles, saveArticle }) => {
-    const [articles, setArticles] = useState(articles);
+    // const [as, _] = useState(articles);
+    // console.log(as);
 
     return (
         <div>
@@ -52,7 +53,7 @@ const Articles = ({ articles, saveArticle }) => {
 };
 
 Articles.propTypes = {
-    articles: PropTypes.object.isRequired,
+    articles: PropTypes.array.isRequired,
     saveArticle: PropTypes.func.isRequired,
 };
 
@@ -68,7 +69,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Articles);
+export default connect(mapStateToProps, mapDispatchToProps)(Articles);
